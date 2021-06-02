@@ -1,0 +1,97 @@
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 0;
+  background-color: grey;
+}
+.title {
+  text-align: center;
+  /* border-radius: 80px; */
+  background-color: rgb(236, 227, 227);
+  font-size: 100px;
+  border: solid rgb(236, 227, 227);
+  border-color: darkkhaki;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.nav {
+  background-color: tomato;
+  margin-top: 20px;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  text-align: center;
+}
+.navbt {
+  padding: 10px;
+  border-color: white;
+  background-color: white;
+  border-radius: 20px;
+}
+#feed {
+  border: solid antiquewhite 3px;
+  text-align: center;
+  margin-top: 20px;
+  border-radius: 40px;
+  margin-left: 3%;
+  margin-right: 3%;
+  background-color: antiquewhite;
+}
+.card {
+  /* CLASS */
+  /* settings for each card/news content */
+  border: solid white 3px;
+  border-radius: 20px;
+  margin-top: 4%;
+  margin-bottom: 4%;
+  margin-left: 3%;
+  margin-right: 3%;
+  background-color: white;
+}
+.image {
+  object-fit: cover;
+  object-position: center;
+  width: 300px;
+  height: 300px;
+  padding: 10px;
+}
+table,
+tr,
+td {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.center {
+  text-align: center;
+}
+#sign_in {
+  text-align: center;
+}
+.button {
+  padding: 10px;
+  border-color: white;
+  background-color: white;
+  border-radius: 20px;
+}
+#title_anchor {
+  text-decoration: none;
+  color: black;
+}
+#signinup {
+  padding: 10px;
+}
+#signpage {
+  border: solid antiquewhite 3px;
+  text-align: center;
+  margin-top: 20px;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: antiquewhite;
+  width: 500px;
+}
+#footer {
+  /* ID */
+  /* the footer settings-denotes end of news content */
+  background-color: tomato;
+  color: black;
+  text-align: center;
+}
