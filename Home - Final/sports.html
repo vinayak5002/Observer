@@ -11,7 +11,7 @@
     <title>Sports news</title>
 </head>
 
-<body>
+<body onload="onload()" >
     <!-- top label to come back to top on click -->
     <label for="top"></label>
 
@@ -28,9 +28,11 @@
         <option value="america">America</option>
     </select> | Saturday,May 29,2021 | Updated 02.16PM IST </pre></span></pre>
 
-    <pre
-        style="text-align: right; font-family: Georgia, 'Times New Roman', Times, serif;"><a href="./sign_in.html">Sign in</a>    <a href="./sign_up.html">Sign up</a>    </pre>
-    <hr>
+    <div style="text-align: right; font-family: Georgia, 'Times New Roman', Times, serif;">
+        <a href="./sign_in.html"> <button class="sign-btn" > Sign in </button></a>
+        <a href="./sign_up.html"> <button class="sign-btn" > Sign up </button></a></a>
+        <button id="mode-btn" onclick="darkLight()" > <img id="mode" src="./images/dark.png" width="20px" alt=""> </button>
+    </div>
 
     <!-- navigation bar, buttons -->
     <div id="nav">
@@ -311,31 +313,62 @@
     </div>
     <br>
     <!-- more tags -->
-    <ul>
-        <form action="" method="">
-            <label for="subscribe">Subscribe to our newsletter!</label>
-            <input type="email" name="email" id="email" placeholder="your email id">
-            <input type="submit" value="Subscribe" onclick="thanks()">
-            <br>
-            <p>Leave a comment:</p>
-            <textarea name="" id="" cols="60%" rows="10"></textarea>
-            <br>
-            <p><input type="submit" value="Post"></p>
-
-        </form>
+    <ul style="list-style-type: none;">
+        <li>
+            <form name="myform" onsubmit="validate();return false;">
+                <input type="text" name="email">
+                <input type="submit" value="Subscribe">
+            </form>
+        </li>
+        <li>
+            <form name="comment" onsubmit="checkempty();return false;">
+                <p>Leave a comment: </p>
+                <textarea name="comment" id="comment" cols="60%" rows="10"></textarea>
+                <input type="submit" value="Post">
+            </form>
+        </li>
     </ul>
     <!-- link to top -->
-    <a href="#top">
-        <p style="text-align: center;"><img src="./images/backtotop.png" width="30px" alt=""></p>
-    </a>
+    <div id="to-top">
+        <a id="to-top" href="#top"><p style="text-align: center;"><img id="top-btn" src="./images/backtotop.png" width="50px" alt=""></p></a>
+    </div>
 
     <!-- onclick function(newsletter subsribtion response) -->
     <script>
-        function thanks() {
-            alert("Thanks for subscribing to our newsletters!")
+        function validate()
+        {   
+            var emailID = document.myform.email.value;
+            atpos = emailID.indexOf("@");
+            dotpos = emailID.lastIndexOf(".");
+            if (atpos < 1 || (dotpos - atpos) < 2)
+            {
+                alert("Please enter a valid email ID.");
+            }
+            else if (hasWhiteSpace(emailID))
+            {
+                alert("Please check your email ID for whitespaces.");
+            }
+            else
+            {
+                confirm("Thanks for subscribing to our newsletters. Would you also like to get notifications?")
+            }
         }
-
+        function hasWhiteSpace(s) {
+            return s.indexOf(' ') >= 0;
+        }
+        function checkempty()
+        {
+            var comment = document.comment.comment.value;
+            if (comment == "")
+            {
+                alert("You cannot leave a blank comment.");
+            }
+            else
+            {
+                alert("You can't comment right now as our servers are down.")
+            }
+        }
     </script>
 </body>
-
+<script src="./index.js"></script>
 </html>

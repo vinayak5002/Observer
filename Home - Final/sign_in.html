@@ -15,7 +15,7 @@
         <div>
             Welcome back! Sign in down below!
         </div>
-        <form action="" method="get" id="signinup">
+        <form action="" method="get" id="signinup" name="myform" onsubmit="usernamecheck();validate();return false;">
             <div>
                 <table>
                     <div>
@@ -34,7 +34,7 @@
                                 <label for="email">Email ID</label>
                             </td>
                             <td>
-                                <input type="email" name="email" id="email" placeholder="Enter your email-ID here" required>
+                                <input type="text" name="email" id="email" placeholder="Enter your email-ID here" required>
                             </td>
                         </tr>
                     </div>
@@ -50,13 +50,46 @@
                     </div>
                 </table>
             </div>
+            <div style="padding: 10px;">
+                <input type="submit" value="Sign In" class="button">
+            </div>
+            <div>
+                Do not have an account with us? <a href="./sign_up.html">Sign Up</a> for one here.
+            </div>
         </form>
-        <div style="padding: 10px;">
-            <input type="submit" value="Sign In" class="button">
-        </div>
-        <div>
-            Do not have an account with us? <a href="./sign_up.html">Sign Up</a> for one here.
-        </div>
+        
     </div>
+    <script>
+        function validate()
+        {
+            var emailID = document.myform.email.value;
+            atpos = emailID.indexOf("@");
+            dotpos = emailID.lastIndexOf(".");
+            if (atpos < 1 || (dotpos - atpos) < 2)
+            {
+                alert("Please enter a valid email ID.");
+            }
+            else if(hasWhiteSpace(emailID))
+            {
+                alert("Please check your email ID for whitespaces.")
+            }
+            else
+            {
+                alert("Our servers are down now, try again later. Thank you for your patience.");
+            }
+        }
+        function hasWhiteSpace(s) {
+            return s.indexOf(' ') >= 0;
+        }
+        function usernamecheck()
+        {
+            var username = document.myform.username.value;
+            var whitespace = hasWhiteSpace(username);
+            if (whitespace)
+            {
+                alert("Please check your username.");
+            }
+        }
+    </script>
 </body>
 </html>
