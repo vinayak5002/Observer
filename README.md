@@ -2,7 +2,9 @@
 
 MY first website
 
-!(https://github.com/vinayak5002/Observer/blob/main/readme/readme1.jpg)
+Home page in light mode
+
+!(readme/ligh_home.jpg)
 
 !https://github.com/vinayak5002/Observer/blob/main/readme/readme2.jpg
 
