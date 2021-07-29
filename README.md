@@ -2,8 +2,18 @@
 
 MY first website
 
-!(https://github.com/vinayak5002/Observer/blob/main/readme/readme1.jpg)
+Home page in light mode
 
-!https://github.com/vinayak5002/Observer/blob/main/readme/readme2.jpg
+![](readme/ligh_home.jpg)
 
-!https://github.com/vinayak5002/Observer/blob/main/readme/readme3.jpg
+Home page in dark mode
+
+![](readme/dark_home.jpg)
+
+News in light mode
+
+![](readme/ligh.jpg)
+
+News in dark mode
+
+![](readme/dark.jpg)
