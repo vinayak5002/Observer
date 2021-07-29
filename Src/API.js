@@ -1,5 +1,9 @@
+var base = "https://inshortsv2.vercel.app/news?type=";
+var postfix = "&limit=23";
+var type = "all_news";
+var temp;
+
 //dark mode toggle
-// var counter = 0;
 var data = localStorage.getItem("counter");
 var counter = parseInt(data);
 
@@ -9,6 +13,50 @@ if(counter % 2 == 0){
 else{
     dark();
 }
+
+
+function change(cat){
+    document.getElementById("cat").innerHTML = cat.innerHTML;
+    if(cat.innerHTML === "Home"){
+        temp = "all_news"
+    }
+    else{
+        temp = cat.innerText.toLowerCase();
+    }
+    type = temp;
+    
+    Load();
+}
+
+function Load(){
+    async function API() {
+        let response = await fetch(base+type+postfix);
+        let data = await response.json();
+        return data;
+    }
+    
+    API().then( data => {
+        for(var i=0; i<10; i++){
+            document.getElementById(`head${i+1}`).innerHTML = data.articles[i].title;
+            document.getElementById(`img${i+1}`).src = data.articles[i].image_url;
+            document.getElementById(`txt${i+1}`).innerHTML = data.articles[i].description;
+        }
+    });
+}
+
+var toTop = document.getElementById("to-top");
+console.log(toTop);
+toTop.style.display = "none";
+
+window.addEventListener("scroll", () => {
+    console.log('scroll');
+    if (window.pageYOffset > 100) {
+        toTop.style.display = "block";
+    }
+    else{
+        toTop.style.display = "none";
+    }
+});
 
 function darkLight(){
     counter++;
@@ -22,8 +70,8 @@ function darkLight(){
 }
 
 function light(){
-    var modeBtn = document.getElementById("mode");
-    modeBtn.src  = "./images/dark.png";
+    var modeBtn = document.getElementById("mode-btn");
+    modeBtn.innerHTML  = '<i id="mode" class="fas fa-moon">';
 
     var lightNav = document.getElementById("nav");
     lightNav.style.backgroundColor = "tomato";
@@ -57,8 +105,8 @@ function light(){
 }
 
 function dark(){
-    var modeBtn = document.getElementById("mode");
-    modeBtn.src  = "./images/light.png";
+    var modeBtn = document.getElementById("mode-btn");
+    modeBtn.innerHTML  = '<i id="mode" class="fas fa-sun">';
 
     var darkNav = document.getElementById("nav");
     darkNav.style.backgroundColor = "rgb(100, 100, 100)";
@@ -91,26 +139,3 @@ function dark(){
     document.body.style.background = "rgb(53, 53, 53)";
 }
 
-//Hover animation
-function mouseIn(btn){
-    btn.style.padding = "15px";
-    btn.style.backgroundColor = "rgb(255, 156, 27)";
-}
-
-function mouseOut(btn){
-    btn.style.padding = "10px";
-    btn.style.backgroundColor = "white";
-}
-
-
-var toTop = document.getElementById("to-top");
-toTop.style.display = "none";
-
-window.addEventListener("scroll", () => {
-    if (window.pageYOffset > 100) {
-        toTop.style.display = "block";
-    }
-    else{
-        toTop.style.display = "none";
-    }
-})

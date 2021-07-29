@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="team project, news website">
+    <meta name="author" content="Team7">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<script>
+    localStorage.setItem("counter", "0");
+</script>
+<script src="./API.js"></script>
+<script>
+    Load();
+</script>
+<body>
+    <!-- top label to come back to top on click -->
+    <label for="top"></label> 
+    <!-- the title of the page -->
+    <div id="title">
+        <span style="color: black; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">The Observer</span>
+    </div>
+
+    <div style="text-align: right; padding-top: 5px;">
+        <a href="#"> <button class="sign-btn" > Sign in </button></a>
+        <a href="#"> <button class="sign-btn" > Sign up </button></a></a>
+        <button id="mode-btn" onclick="darkLight()" ><i id="mode" class="fas fa-moon"></i></button>
+    </div>
+    <hr>
+
+    <!-- navigation bar, buttons -->
+    <div id="nav">
+        <button onclick="change(this)" class="navbt">Home</button></a>
+        <button onclick="change(this)" class="navbt">Automobile</button>
+        <button onclick="change(this)" class="navbt">Business</button>
+        <button onclick="change(this)" class="navbt">Education</button>
+        <button onclick="change(this)" class="navbt">Entertainment</button>
+        <button onclick="change(this)" class="navbt">Hatke</button>
+        <button onclick="change(this)" class="navbt">World</button>
+        <button onclick="change(this)" class="navbt">Politics</button>
+        <button onclick="change(this)" class="navbt">Science</button>
+        <button onclick="change(this)" class="navbt">Sports</button>
+        <button onclick="change(this)" class="navbt">Technology</button>
+    </div>
+    
+    <div class="feed">
+        <p id="cat">Today's headlines</p>
+        <div class="card">
+            <div class="row">
+                <div width="30%" class="column1">
+                    <img id="img1" src="" width="100%" margin-left="0px" alt="">
+                </div>
+                <div width="70%" class="column2">
+                    <h4 id="head1"></h4>
+                    <p id="txt1"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="row">
+                <div width="30%" class="column1">
+                    <img id="img2" src="" width="100%" margin-left="0px" alt="">
+                </div>
+                <div width="70%" class="column2">
+                    <h4 id="head2"></h4>
+                    <p id="txt2"></p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="row">
+                <div width="30%" class="column1">
+                    <img id="img3" src="" width="100%" margin-left="0px" alt="">
+                </div>
+                <div width="70%" class="column2">
+                    <h4 id="head3"></h4>
+                    <p id="txt3"></p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="row">
+                <div width="30%" class="column1">
+                    <img id="img4" src="" width="100%" margin-left="0px" alt="">
+                </div>
+                <div width="70%" class="column2">
+                    <h4 id="head4"></h4>
+                    <p id="txt4"></p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="row">
+                <div width="30%" class="column1">
+                    <img id="img5" src="" width="100%" margin-left="0px" alt="">
+                </div>
+                <div width="70%" class="column2">
+                    <h4 id="head5"></h4>
+                    <p id="txt5"></p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="row">
+                <div width="30%" class="column1">
+                    <img id="img6" src="" width="100%" margin-left="0px" alt="">
+                </div>
+                <div width="70%" class="column2">
+                    <h4 id="head6"></h4>
+                    <p id="txt6"></p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="row">
+                <div width="30%" class="column1">
+                    <img id="img7" src="" width="100%" margin-left="0px" alt="">
+                </div>
+                <div width="70%" class="column2">
+                    <h4 id="head7"></h4>
+                    <p id="txt7"></p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="row">
+                <div width="30%" class="column1">
+                    <img id="img8" src="" width="100%" margin-left="0px" alt="">
+                </div>
+                <div width="70%" class="column2">
+                    <h4 id="head8"></h4>
+                    <p id="txt8"></p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="row">
+                <div width="30%" class="column1">
+                    <img id="img9" src="" width="100%" margin-left="0px" alt="">
+                </div>
+                <div width="70%" class="column2">
+                    <h4 id="head9"></h4>
+                    <p id="txt9"></p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="row">
+                <div width="30%" class="column1">
+                    <img id="img10" src="" width="100%" margin-left="0px" alt="">
+                </div>
+                <div width="70%" class="column2">
+                    <h4 id="head10"></h4>
+                    <p id="txt10"></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+        
+<!-- end of effective feed -->
+
+    <br><br>
+<!-- footer -->
+    <div id="footer">
+        <span style="font-weight: bold;"> Connect with us: </span>
+        <a href="https://twitter.com" target="_blank"><img src="./images/twitter.png" alt="twitter.jpg" width="35px"></a>
+        <a href="https://en-gb.facebook.com/login/web/" target="_blank"><img src="./images/facebook.png" alt="facebook.jpg" width="40px"></a>
+    </div>
+    <br>
+<!-- more tags -->
+    <ul style="list-style-type: none;">
+        <li>
+            <form name="myform" onsubmit="validate();return false;">
+                <input type="text" name="email">
+                <input type="submit" value="Subscribe">
+            </form>
+        </li>
+        <li>
+            <form name="comment" onsubmit="checkempty();return false;">
+                <p>Leave a comment: </p>
+                <textarea name="comment" id="comment" cols="60%" rows="10"></textarea>
+                <input type="submit" value="Post">
+            </form>
+        </li>
+    </ul>
+<!-- link to top -->
+    <div id="to-top">
+    <a href="#top"><img id="top-btn" src="./images/backtotop.png" width="50px" alt=""></a>
+    </div>
+    
+<!-- onclick function(newsletter subsribtion response) -->
+<script>
+    function validate()
+    {   
+        var emailID = document.myform.email.value;
+        atpos = emailID.indexOf("@");
+        dotpos = emailID.lastIndexOf(".");
+        if (atpos < 1 || (dotpos - atpos) < 2)
+        {
+            alert("Please enter a valid email ID.");
+        }
+        else if (hasWhiteSpace(emailID))
+        {
+            alert("Please check your email ID for whitespaces.");
+        }
+        else
+        {
+            confirm("Thanks for subscribing to our newsletters. Would you also like to get notifications?")
+        }
+    }
+    function hasWhiteSpace(s) {
+        return s.indexOf(' ') >= 0;
+    }
+    function checkempty()
+    {
+        var comment = document.comment.comment.value;
+        if (comment == "")
+        {
+            alert("You cannot leave a blank comment.");
+        }
+        else
+        {
+            alert("You can't comment right now as our servers are down.")
+        }
+    }
+</script>
+</body>
+<script src="./index.js"></script>
+</html>
