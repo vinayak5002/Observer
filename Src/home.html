@@ -14,6 +14,8 @@
     localStorage.setItem("counter", "0");
 </script>
 <script src="./API.js"></script>
+<script src="./response.js"></script>
+<script src="./mode.js"></script>
 <script>
     Load();
 </script>
@@ -25,7 +27,7 @@
         <span style="color: black; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">The Observer</span>
     </div>
 
-    <div style="text-align: right; padding-top: 5px;">
+    <div id="sign" style="text-align: right; padding-top: 5px;">
         <a href="#"> <button class="sign-btn" > Sign in </button></a>
         <a href="#"> <button class="sign-btn" > Sign up </button></a></a>
         <button id="mode-btn" onclick="darkLight()" ><i id="mode" class="fas fa-moon"></i></button>
@@ -34,134 +36,56 @@
 
     <!-- navigation bar, buttons -->
     <div id="nav">
-        <button onclick="change(this)" class="navbt">Home</button></a>
-        <button onclick="change(this)" class="navbt">Automobile</button>
-        <button onclick="change(this)" class="navbt">Business</button>
-        <button onclick="change(this)" class="navbt">Education</button>
-        <button onclick="change(this)" class="navbt">Entertainment</button>
-        <button onclick="change(this)" class="navbt">Hatke</button>
-        <button onclick="change(this)" class="navbt">World</button>
-        <button onclick="change(this)" class="navbt">Politics</button>
-        <button onclick="change(this)" class="navbt">Science</button>
-        <button onclick="change(this)" class="navbt">Sports</button>
-        <button onclick="change(this)" class="navbt">Technology</button>
+        <div id="add">
+            <div>
+                <button id="mode-btn_" onclick="darkLight()" ><i id="mode" class="fas fa-moon"></i></button>
+            </div>
+            <div id="menu">
+                <button onclick="Drop()" class="mode-bt"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+        <ul id="drop" style="list-style-type:none;">
+            <li><div onclick="change(this); Drop();" class="navbt">Home</div></li>
+            <li><div onclick="change(this); Drop();" class="navbt">Automobile</div></li>
+            <li><div onclick="change(this); Drop();" class="navbt">Business</div></li>
+            <li><div onclick="change(this); Drop();" class="navbt">Education</div></li>
+            <li><div onclick="change(this); Drop();" class="navbt">Entertainment</div></li>
+            <li><div onclick="change(this); Drop();" class="navbt">Hatke</div></li>
+            <li><div onclick="change(this); Drop();" class="navbt">World</div></li>
+            <li><div onclick="change(this); Drop();" class="navbt">Politics</div></li>
+            <li><div onclick="change(this); Drop();" class="navbt">Science</div></li>
+            <li><div onclick="change(this); Drop();" class="navbt">Sports</div></li>
+            <li><div onclick="change(this); Drop();" class="navbt">Technology</div></li>
+        </ul>
+        <div id="realnav">
+            <button onclick="change(this)" class="navbt">Home</button>
+            <button onclick="change(this)" class="navbt">Automobile</button>
+            <button onclick="change(this)" class="navbt">Business</button>
+            <button onclick="change(this)" class="navbt">Education</button>
+            <button onclick="change(this)" class="navbt">Entertainment</button>
+            <button onclick="change(this)" class="navbt">Hatke</button>
+            <button onclick="change(this)" class="navbt">World</button>
+            <button onclick="change(this)" class="navbt">Politics</button>
+            <button onclick="change(this)" class="navbt">Science</button>
+            <button onclick="change(this)" class="navbt">Sports</button>
+            <button onclick="change(this)" class="navbt">Technology</button>
+        </div>
+        
     </div>
     
     <div class="feed">
         <p id="cat">Today's headlines</p>
-        <div class="card">
-            <div class="row">
-                <div width="30%" class="column1">
-                    <img id="img1" src="" width="100%" margin-left="0px" alt="">
-                </div>
-                <div width="70%" class="column2">
-                    <h4 id="head1"></h4>
-                    <p id="txt1"></p>
-                </div>
+        <div id="news">
+            
+        </div>
+        <div id="more">
+            <p id="read-more">Read more</p>
+            <div onclick="loadMore()" >
+                <img src="https://img.icons8.com/ios-filled/50/000000/down-squared--v1.png"/>
             </div>
         </div>
-
-        <div class="card">
-            <div class="row">
-                <div width="30%" class="column1">
-                    <img id="img2" src="" width="100%" margin-left="0px" alt="">
-                </div>
-                <div width="70%" class="column2">
-                    <h4 id="head2"></h4>
-                    <p id="txt2"></p>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="row">
-                <div width="30%" class="column1">
-                    <img id="img3" src="" width="100%" margin-left="0px" alt="">
-                </div>
-                <div width="70%" class="column2">
-                    <h4 id="head3"></h4>
-                    <p id="txt3"></p>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="row">
-                <div width="30%" class="column1">
-                    <img id="img4" src="" width="100%" margin-left="0px" alt="">
-                </div>
-                <div width="70%" class="column2">
-                    <h4 id="head4"></h4>
-                    <p id="txt4"></p>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="row">
-                <div width="30%" class="column1">
-                    <img id="img5" src="" width="100%" margin-left="0px" alt="">
-                </div>
-                <div width="70%" class="column2">
-                    <h4 id="head5"></h4>
-                    <p id="txt5"></p>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="row">
-                <div width="30%" class="column1">
-                    <img id="img6" src="" width="100%" margin-left="0px" alt="">
-                </div>
-                <div width="70%" class="column2">
-                    <h4 id="head6"></h4>
-                    <p id="txt6"></p>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="row">
-                <div width="30%" class="column1">
-                    <img id="img7" src="" width="100%" margin-left="0px" alt="">
-                </div>
-                <div width="70%" class="column2">
-                    <h4 id="head7"></h4>
-                    <p id="txt7"></p>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="row">
-                <div width="30%" class="column1">
-                    <img id="img8" src="" width="100%" margin-left="0px" alt="">
-                </div>
-                <div width="70%" class="column2">
-                    <h4 id="head8"></h4>
-                    <p id="txt8"></p>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="row">
-                <div width="30%" class="column1">
-                    <img id="img9" src="" width="100%" margin-left="0px" alt="">
-                </div>
-                <div width="70%" class="column2">
-                    <h4 id="head9"></h4>
-                    <p id="txt9"></p>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="row">
-                <div width="30%" class="column1">
-                    <img id="img10" src="" width="100%" margin-left="0px" alt="">
-                </div>
-                <div width="70%" class="column2">
-                    <h4 id="head10"></h4>
-                    <p id="txt10"></p>
-                </div>
-            </div>
-        </div>
-
     </div>
+    
     
         
 <!-- end of effective feed -->
@@ -185,7 +109,7 @@
         <li>
             <form name="comment" onsubmit="checkempty();return false;">
                 <p>Leave a comment: </p>
-                <textarea name="comment" id="comment" cols="60%" rows="10"></textarea>
+                <textarea name="comment" cols="30%" id="comment" rows="10"></textarea>
                 <input type="submit" value="Post">
             </form>
         </li>

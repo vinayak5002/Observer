@@ -1,6 +1,5 @@
 body {
   /* font settings for the news content */
-  width: 100%;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   margin: 0px;
   padding: 0px;
@@ -44,7 +43,16 @@ h4{
   color: black;
   border-color: white;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 10px;
+}
+.navbt:hover {
+  /* CLASS */
+  /* navigation button settings */
+  padding: 10px;
+  color: white;
+  border-color: rgb(255, 173, 21);
+  background-color: rgb(255, 173, 21);
+  border-radius: 10px;
 }
 .feed {
   /* CLASS */
@@ -82,6 +90,9 @@ h4{
   background-color: white;
   border-radius: 20px;
 }
+#add{
+  display: none;
+}
 #title {
   /* ID */
   /* settings for the title */
@@ -112,6 +123,82 @@ h4{
 #to-top{
   display: "none";
   position: fixed;
-  right: 10px;
+  left: 10px;
   bottom: 0px;
+}
+#drop{
+  display: none;
+}
+
+@media only screen  and (max-width: 700px){
+  body{
+    width: 100%;
+  }
+  ul{
+    padding: 0 1em;
+    margin-bottom: 0.5em;
+  }
+  #title {
+    /* ID */
+    /* settings for the title */
+    width: 100%;
+    text-align: center;
+    border: solid rgb(236, 227, 227);
+    background-color: rgb(236, 227, 227);
+    font-size: 3rem;
+  }
+  #cat{
+    font-size: 2rem;
+  }
+  .row{
+    padding: 1%;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  img{
+    max-height: 300px;
+  }
+  #mode-btn_{
+    padding: 4px;
+    color: black;
+    border-color: white;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 0.5em;
+  }
+  .mode-bt{
+    padding: 8px;
+    color: black;
+    border-color: white;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 0.5em;
+  }
+  .navbt{
+    background-color: white;
+    margin-bottom: 0.5em;
+  }
+  #butns{
+    display: none;
+  }
+  #add{
+    margin-right: 0.5em;
+    display: block;
+    display: flex;
+  }
+  #menu{
+    margin-left: auto;
+  }
+  #sign{
+    display: none;
+  }
+  #drop{
+    margin-left: 0;
+    display: none;
+    text-align: left;
+  }
+  #realnav{
+    display: none;
+  }
 }
