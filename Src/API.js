@@ -7,6 +7,7 @@ var more = 0, start = 5, end = 10;
 function change(cat){
     window.scrollTo(0, 0);
     document.getElementById("cat").innerHTML = cat.innerHTML;
+    document.getElementById("read-more").innerHTML = "Read More";
     if(cat.innerHTML === "Home"){
         temp = "all_news"
     }
@@ -45,13 +46,15 @@ function Load(){
             document.getElementById(`img${i+1}`).src = data.articles[i].image_url;
             document.getElementById(`txt${i+1}`).innerHTML = data.articles[i].description;
         }
+        if(counter % 2 !== 0){
+            dark();
+        }
     });
 }
 
 function loadMore(){
     if(more < 3){
         more++;
-        console.log(more);
         start+=5;end+=5;
         async function API() {
             let response = await fetch(base+type+postfix);
@@ -72,10 +75,13 @@ function loadMore(){
                         <p id="txt${i+1}"></p>
                     </div>
                 </div>
-            </div>`;
+                </div>`;
                 document.getElementById(`head${i+1}`).innerHTML = data.articles[i].title;
                 document.getElementById(`img${i+1}`).src = data.articles[i].image_url;
                 document.getElementById(`txt${i+1}`).innerHTML = data.articles[i].description;
+            }
+            if(counter % 2 !== 0){
+                dark();
             }
         });
     }
