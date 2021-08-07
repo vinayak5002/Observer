@@ -1,14 +1,29 @@
-# Oberver
+# The Oberver
+
+## About
 
 A website which displays live and updated news
 
-This is made with Inshorts News API v2
+## Tools used
 
-This API's documentation [here](https://github.com/sumitkolhe/inshorts-api-v2)
+- Vanila HTML, CSS, javascript
+- Inshorts News API v2
+   - [This API's documentation](https://github.com/sumitkolhe/inshorts-api-v2)
+
+## Visit the site
 
 Visit the website [here](https://vinayak5002.github.io/Observer/home.html)
 
-And this is how my website looks:
+## Features:
+- Live updates of news
+- Read news from 10 differenct catogories 
+- Pleasing dark mode 
+- Rsponsive website which can be used it almost any device
+- You can load more news if you are intrested (There is a limit of how many news will be loaded btw)
+
+## Previews
+
+### PC Version
 
 Home page in light mode
 
@@ -18,10 +33,16 @@ Home page in dark mode
 
 ![](readme/dark%20home.jpg)
 
-News in light mode
+### Mobile Version
 
-![](readme/light.jpg)
+- Landing page light mode
 
-News in dark mode
+![image](https://user-images.githubusercontent.com/82216732/128609907-65a40017-a9b2-4eff-8390-9e4b1b799572.png)
 
-![](readme/dark.jpg)
+- Landing page in Dark mode
+
+![image](https://user-images.githubusercontent.com/82216732/128609942-14c503f4-e5fb-4d9e-84b8-1410d8995a5f.png)
+
+- Navigation bar in action
+
+![image](https://user-images.githubusercontent.com/82216732/128610031-d4605eba-3589-42e7-bef4-e0990bed3531.png)
