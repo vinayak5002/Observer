@@ -16,7 +16,7 @@ Visit the website [here](https://vinayak5002.github.io/Observer/home.html)
 
 ## Features:
 - Live updates of news
-- Read news from 10 differenct catogories 
+- Read news from 10 different catogories 
 - Pleasing dark mode 
 - Rsponsive website which can be used it almost any device
 - You can load more news if you are intrested (There is a limit of how many news will be loaded btw)
