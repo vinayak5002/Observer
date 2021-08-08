@@ -6,7 +6,7 @@ A website which displays live and updated news
 
 ## Tools used
 
-- Vanila HTML, CSS, javascript
+- Vanila HTML, CSS, Javascript
 - Inshorts News API v2
    - [This API's documentation](https://github.com/sumitkolhe/inshorts-api-v2)
 
